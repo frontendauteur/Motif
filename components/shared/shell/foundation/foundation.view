@@ -1,0 +1,83 @@
+<?php include LB_BASE_PATH . "views/bases/shell.view"; ?>
+
+<?php startblock("head"); ?>
+    <title><?php echo $this->pageTitle; ?></title>
+
+    <meta name="description" content="<?php echo $this->pageDescription; ?>">
+    <meta name="keywords" content="<?php echo $this->keywords; ?>">
+
+    <meta property="og:title" content="<?php echo $this->ogPageTitle; ?>">
+    <meta property="og:description" content="<?php echo $this->ogPageDescription; ?>">
+    <meta property="og:url" content="http://<?php echo $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>">
+    <meta property="og:image" content="<?php echo $this->ogPageImage; ?>">
+    <meta property="og:site_name" content="<?php echo $this->pageTitle; ?>">
+    <meta property="og:type" content="website">
+
+    <!-- Styles -->
+    <link href="<?php echo RESOURCES_PATH; ?>css/motif.<?php echo CSS_MOTIF_CSS; ?>.css" rel="stylesheet">
+    <link href="<?php echo RESOURCES_PATH; ?>css/motif-print.<?php echo CSS_MOTIF_PRINT_CSS; ?>.css" rel="print">
+    <!-- End Styles -->
+
+    <!-- Important Scripts -->
+    <script src="<?php echo RESOURCES_PATH; ?>js/helpers.motif.<?php echo JS_HELPERS_MOTIF_JS; ?>.js"></script>
+    <!-- End Important Scripts -->
+<?php endblock(); ?>
+
+<?php startblock("body"); ?>
+
+    <!-- Site Header -->
+    <header id="main-header" class="main-header" role="banner">
+        <div class="wrapper group">
+            <div class="gm-row gl-row mts">
+                <div class="gcm-quarter gcl-quarter">
+
+                    <!-- Logo -->
+                    <a href="/" class="logo" title="Return to the homepage">
+                        <img src="http://placehold.it/200x100/f7f7f9/b8b5b6&text=Logo" width="200" height="100" alt="Logo">
+                    </a>
+                    <!-- End Logo -->
+
+                </div>
+                <div class="gcm-three-quarters gcl-three-quarters">
+
+                    <?php /*
+                    <!-- Eyebrow Nav -->
+                    <ul class="is-hidden-mobile align--right link-list--x petite-text mtm mbl">
+                        <li><a href="#">EYEBROW</a></li>
+                    </ul>
+                    <!-- End Eyebrow Nav -->
+                    */ ?>
+
+                    <?php include LB_BASE_PATH . "views/partials/mainNavigation.view"; ?>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End Site Header -->
+
+    <!-- Site Content -->
+    <main id="main-content" class="main-content" role="main">
+        <div class="wrapper group">
+            <?php include LB_BASE_PATH . "views/partials/breadcrumbNavigation.view"; ?>
+
+            <?php emptyblock("content"); ?>
+        </div>
+    </main>
+    <!-- End Site Content -->
+
+    <!-- Site Footer -->
+    <footer id="main-footer" class="main-footer pvl" role="contentinfo">
+        <div class="wrapper group">
+
+            <!-- Copyright -->
+            <p class="copyright align--center"><small class="legal petite-text">&copy; <?php echo date('Y'); ?> Company Name</small></p>
+            <!-- End Copyright -->
+
+        </div>
+    </footer>
+    <!-- End Site Footer -->
+
+    <!-- Additional Scripts -->
+    <script async src="<?php echo RESOURCES_PATH; ?>js/motif.<?php echo JS_MOTIF_JS; ?>.js"></script>
+
+<?php endblock(); ?>
